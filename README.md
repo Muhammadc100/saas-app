@@ -29,6 +29,30 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Clerk Authentication (Optional)
+
+This project can be secured using [Clerk](https://clerk.com) with the Next.js App Router. Follow the steps below:
+
+1. Install the Clerk Next.js SDK:
+
+```bash
+npm install @clerk/nextjs
+```
+
+2. Create a `.env.local` file with your Clerk API keys:
+
+```bash
+# .env.local (do not commit this file)
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=YOUR_PUBLISHABLE_KEY
+CLERK_SECRET_KEY=YOUR_SECRET_KEY
+```
+
+3. Add the `proxy.ts` middleware (already included).
+4. Your `app/layout.tsx` has been wrapped with `<ClerkProvider>` and includes sign‑in/sign‑up UI.
+
+> 🛡️ Keys should only live in `.env.local`. `.gitignore` already excludes `env*` files.
+
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
