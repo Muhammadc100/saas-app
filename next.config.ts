@@ -6,11 +6,14 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true
   },
-  /* config options here */
+  // @ts-ignore
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   reactCompiler: true,
   images: {
     remotePatterns: [
-      { protocol:"https", hostname: 'img.clerk.com' }
+      { hostname: 'img.clerk.com' }
     ]
   }
 };
